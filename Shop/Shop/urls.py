@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Products.views import start
-
+from Products.views import show_products
+from Users.views import show_user, login_user, register_user
+from django.conf.urls.static import static
+from .settings import STATIC_URL
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', start)
-]
+    path('products/', show_products),
+    path('user/', show_user, name= 'user'),
+    path('user/login', login_user, name= 'login'),
+    path('user/registration', register_user, name= 'registration')
+]+ static(STATIC_URL)
