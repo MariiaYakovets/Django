@@ -14,5 +14,8 @@
 			<img src="{{product.image}}" alt="" />
 		</div>
 		{%endfor%}
+        {% if user.is_authenticated and user.is_superuser %}
+        <a href="{% url 'create-product' %}">Create a product</a>
+        {% endif %}
 	</body>
 </html>

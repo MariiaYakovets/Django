@@ -29,7 +29,7 @@ regForm.addEventListener("submit", (event) => {
 		})
 			.then((response) => {
 				console.log(response);
-                window.location.assign("/products/")
+                window.location.assign("/user/")
 			})
 			.catch((response) => {
 				alert(response.statusText);
